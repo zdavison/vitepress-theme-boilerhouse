@@ -1,6 +1,10 @@
 node_modules
-dist
 demo/.vitepress/cache
 demo/.vitepress/dist
 *.log
 .DS_Store
+
+# NOTE: dist/ is committed because this package is consumed via
+# `github:zdavison/vitepress-theme-boilerhouse` and bun doesn't run
+# devDependency-backed prepare scripts on git installs.
+!dist/
