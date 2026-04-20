@@ -3,7 +3,7 @@ import vue from 'esbuild-plugin-vue3'
 
 export default defineConfig({
   esbuildPlugins: [vue()],
-  entry: ['src/index.ts'],
+  entry: ['src/index.ts', 'src/markdown.ts'],
   format: ['esm'],
   dts: true,
   clean: true,

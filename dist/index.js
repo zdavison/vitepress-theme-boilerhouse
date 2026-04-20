@@ -1,3 +1,7 @@
+import {
+  markdown
+} from "./chunk-E4KTCDBW.js";
+
 // src/index.ts
 import DefaultTheme2 from "vitepress/theme";
 
@@ -49,13 +53,6 @@ import "./styles/fonts.css";
 import "./styles/vars.css";
 import "./styles/base.css";
 import "./styles/components.css";
-
-// src/markdown.ts
-var markdown = {
-  theme: "one-dark-pro"
-};
-
-// src/index.ts
 var theme = {
   extends: DefaultTheme2,
   Layout: BoilerhouseLayout_default2
