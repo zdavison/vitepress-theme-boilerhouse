@@ -20,7 +20,8 @@
     "build": "tsup",
     "dev": "vitepress dev demo",
     "demo:build": "vitepress build demo",
-    "demo:preview": "vitepress preview demo"
+    "demo:preview": "vitepress preview demo",
+    "prepare": "tsup"
   },
   "peerDependencies": {
     "vitepress": ">=1.0.0",
