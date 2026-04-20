@@ -1,0 +1,332 @@
+/*
+ * VitePress component overrides — shape them to look like the
+ * Boilerhouse dashboard (apps/dashboard/src/app.tsx):
+ *   - sidebar is surface-1 with lowercase mono nav labels
+ *   - active items get surface-3 fill + white text
+ *   - accent teal appears sparingly (brand links, active indicators)
+ */
+
+/* ══════════════════════════════════════════
+   Navigation
+   ══════════════════════════════════════════ */
+
+.VPNav {
+  background-color: var(--bh-surface-0) !important;
+}
+
+.VPNavBar {
+  background-color: var(--bh-surface-0) !important;
+}
+
+.VPNavBar .wrapper {
+  border-bottom: 1px solid var(--bh-border) !important;
+}
+
+.VPNavBar .container {
+  border-bottom: none !important;
+}
+
+.VPNavBar.has-sidebar .content,
+.VPNavBar.has-sidebar .curtain {
+  background-color: var(--bh-surface-0) !important;
+}
+
+.VPNavBarMenuLink {
+  font-family: var(--vp-font-family-mono) !important;
+  font-size: 0.8rem !important;
+  color: var(--bh-muted-light) !important;
+}
+
+.VPNavBarMenuLink:hover {
+  color: var(--bh-text-strong) !important;
+}
+
+.VPNavBarMenuLink.active {
+  color: var(--bh-accent-bright) !important;
+  font-weight: 600;
+}
+
+/* Site title — Inter Tight, bold, tight tracking */
+.VPNavBarTitle .title {
+  font-family: var(--bh-font-family-tight) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--bh-text-strong) !important;
+}
+
+/* ══════════════════════════════════════════
+   Sidebar — styled like the dashboard nav column
+   ══════════════════════════════════════════ */
+
+.VPSidebar {
+  background-color: var(--bh-surface-1) !important;
+  border-right: 1px solid var(--bh-border) !important;
+}
+
+/* Section titles — Inter Tight, uppercase, muted */
+.VPSidebarItem.level-0 > .item .text {
+  font-family: var(--bh-font-family-tight) !important;
+  font-weight: 700 !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bh-muted) !important;
+}
+
+/* Leaf links — mono, lowercase-feeling, small */
+.VPSidebarItem .link .text {
+  font-family: var(--vp-font-family-mono) !important;
+  font-size: 0.8rem !important;
+  color: var(--bh-muted-light) !important;
+  transition: color 0.15s ease;
+}
+
+.VPSidebarItem .link:hover .text {
+  color: var(--bh-text-strong) !important;
+}
+
+/* Active link — surface-3 fill + bright text, matches dashboard nav */
+.VPSidebarItem.is-active > .item > .link > .text {
+  color: var(--bh-text-strong) !important;
+  font-weight: 600 !important;
+}
+
+/* Active indicator bar on the left */
+.VPSidebarItem.is-active > .item .indicator {
+  background-color: var(--bh-accent) !important;
+}
+
+/* ══════════════════════════════════════════
+   Custom blocks — filled surface-1 panels with a 3px accent border
+   ══════════════════════════════════════════ */
+
+.vp-doc .custom-block {
+  border: 1px solid var(--bh-border) !important;
+  border-left: 3px solid var(--bh-muted) !important;
+  background-color: var(--bh-surface-1) !important;
+  padding: 1rem 1.25rem;
+  border-radius: 0.375rem !important;
+}
+
+.vp-doc .custom-block.info,
+.vp-doc .custom-block.note {
+  border-left-color: var(--bh-status-blue) !important;
+}
+
+.vp-doc .custom-block.tip {
+  border-left-color: var(--bh-accent) !important;
+}
+
+.vp-doc .custom-block.important {
+  border-left-color: var(--bh-status-blue) !important;
+}
+
+.vp-doc .custom-block.warning,
+.vp-doc .custom-block.caution {
+  border-left-color: var(--bh-status-yellow) !important;
+}
+
+.vp-doc .custom-block.danger {
+  border-left-color: var(--bh-status-red) !important;
+}
+
+.vp-doc .custom-block.details {
+  background-color: var(--bh-surface-1) !important;
+}
+
+.vp-doc .custom-block-title {
+  font-family: var(--bh-font-family-tight) !important;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--bh-text-strong);
+}
+
+.vp-doc .custom-block a {
+  color: var(--bh-accent-bright) !important;
+}
+
+/* ══════════════════════════════════════════
+   Feature cards on home page — surface-2 panels
+   ══════════════════════════════════════════ */
+
+.VPFeature {
+  border: 1px solid var(--bh-border) !important;
+  background-color: var(--bh-surface-2) !important;
+  transition: border-color 0.15s ease, transform 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.VPFeature:hover {
+  border-color: var(--bh-accent) !important;
+  background-color: var(--bh-surface-3) !important;
+  transform: translateY(-1px);
+}
+
+.VPFeature .icon {
+  background-color: var(--bh-surface-3) !important;
+  border: 1px solid var(--bh-border-light);
+  color: var(--bh-accent-bright) !important;
+}
+
+.VPFeature .title {
+  font-family: var(--bh-font-family-tight) !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  color: var(--bh-text-strong) !important;
+}
+
+.VPFeature .details {
+  font-size: 0.85rem !important;
+  color: var(--bh-muted-light) !important;
+  line-height: 1.55;
+}
+
+/* ══════════════════════════════════════════
+   Hero
+   ══════════════════════════════════════════ */
+
+.VPHero .name,
+.VPHero .text {
+  font-family: var(--bh-font-family-tight) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.VPHero .name .clip {
+  background: linear-gradient(
+    120deg,
+    var(--bh-accent-bright) 0%,
+    var(--bh-accent) 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+.VPHero .tagline {
+  font-family: var(--vp-font-family-mono) !important;
+  color: var(--bh-muted-light) !important;
+  font-size: 1rem !important;
+  letter-spacing: -0.005em;
+}
+
+/* ══════════════════════════════════════════
+   Buttons
+   ══════════════════════════════════════════ */
+
+.VPButton {
+  border-radius: 0.375rem !important;
+  font-family: var(--bh-font-family-tight) !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.005em;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+/* ══════════════════════════════════════════
+   Footer / Outline / Pagination
+   ══════════════════════════════════════════ */
+
+.VPFooter {
+  border-top: 1px solid var(--bh-border);
+  background-color: var(--bh-surface-1) !important;
+  color: var(--bh-muted) !important;
+}
+
+.VPBadge {
+  font-family: var(--vp-font-family-mono) !important;
+  font-size: 0.7rem !important;
+  border-radius: 0.375rem !important;
+  letter-spacing: 0.02em;
+}
+
+.VPDocAsideOutline .outline-link {
+  font-size: 0.8rem;
+  color: var(--bh-muted-light);
+  transition: color 0.15s ease;
+}
+
+.VPDocAsideOutline .outline-link:hover {
+  color: var(--bh-text-strong);
+}
+
+.VPDocAsideOutline .outline-link.active {
+  font-weight: 600;
+  color: var(--bh-accent-bright);
+}
+
+.VPDocAsideOutline .outline-marker {
+  background-color: var(--bh-accent) !important;
+}
+
+.VPDocAside .outline-title {
+  font-family: var(--bh-font-family-tight) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem !important;
+  color: var(--bh-muted) !important;
+  font-weight: 700;
+}
+
+.VPDocFooter .pager .pager-link {
+  border-radius: 0.375rem !important;
+  border: 1px solid var(--bh-border) !important;
+  background-color: var(--bh-surface-1);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.VPDocFooter .pager .pager-link:hover {
+  border-color: var(--bh-accent) !important;
+  background-color: var(--bh-surface-2);
+}
+
+.VPDocFooter .pager .pager-link .title {
+  color: var(--bh-accent-bright) !important;
+}
+
+/* ══════════════════════════════════════════
+   Search
+   ══════════════════════════════════════════ */
+
+.VPNavBarSearch .DocSearch-Button,
+.VPNavBarSearch .search-input {
+  background-color: var(--bh-surface-2) !important;
+  border: 1px solid var(--bh-border-light) !important;
+  border-radius: 0.375rem !important;
+}
+
+.VPLocalSearchBox .shell {
+  border-radius: 0.5rem !important;
+  background-color: var(--bh-surface-1) !important;
+  border: 1px solid var(--bh-border-light) !important;
+}
+
+.VPLocalSearchBox .search-input {
+  background-color: var(--bh-surface-2) !important;
+  border-radius: 0.375rem !important;
+  color: var(--bh-text-strong) !important;
+}
+
+.VPLocalSearchBox .result {
+  background-color: var(--bh-surface-2) !important;
+  border: 1px solid transparent !important;
+}
+
+.VPLocalSearchBox .result.selected {
+  border-color: var(--bh-accent) !important;
+  background-color: var(--bh-surface-3) !important;
+}
+
+/* ══════════════════════════════════════════
+   Misc
+   ══════════════════════════════════════════ */
+
+/* Hide the appearance toggle — dashboard is dark-only */
+.VPNavBarAppearance,
+.VPNavScreenAppearance {
+  display: none !important;
+}

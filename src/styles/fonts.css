@@ -1,0 +1,5 @@
+/* Font imports — using CSS @import so Vite processes them client-side
+   and they don't break Node.js SSR (which can't handle .css file extensions). */
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/inter-tight';
+@import '@fontsource-variable/jetbrains-mono';

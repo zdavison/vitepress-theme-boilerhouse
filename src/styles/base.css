@@ -1,0 +1,219 @@
+/*
+ * Global base styles — match the Boilerhouse dashboard's typographic rhythm.
+ * Small, dense prose; rounded-md (0.375rem) corners; subtle surface-2 panels.
+ */
+
+html,
+body {
+  background-color: var(--bh-surface-0);
+  color: var(--bh-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Prose body sizing ── */
+.vp-doc {
+  font-size: 0.875rem !important;
+  line-height: 1.65 !important;
+}
+
+.vp-doc p,
+.vp-doc li,
+.vp-doc ul,
+.vp-doc ol {
+  font-size: 0.875rem !important;
+  line-height: 1.65 !important;
+}
+
+.vp-doc blockquote > p {
+  font-size: 0.875rem !important;
+}
+
+/* ── Inline code ── */
+.vp-doc :not(pre) > code {
+  padding: 0.15em 0.4em;
+  border-radius: 0.375rem;
+  font-size: 0.85em;
+  color: var(--vp-code-color) !important;
+  background-color: var(--vp-code-bg) !important;
+  border: 1px solid var(--bh-border);
+}
+
+/* ── Code blocks ── */
+.vp-doc div[class*="language-"] {
+  border: 1px solid var(--bh-border);
+  border-radius: 0.375rem;
+  background-color: var(--vp-code-block-bg) !important;
+}
+
+.vp-doc div[class*="language-"] > pre {
+  background-color: transparent !important;
+}
+
+/* Code block language label */
+.vp-doc div[class*="language-"] > span.lang {
+  color: var(--bh-muted) !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Code tabs — underline like the dashboard's active-tab style */
+.vp-code-group .tabs {
+  background-color: var(--bh-surface-1) !important;
+  border-bottom: 1px solid var(--bh-border);
+  border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+
+.vp-code-group .tabs label {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  font-family: var(--vp-font-family-mono) !important;
+  font-size: 0.75rem !important;
+  color: var(--bh-muted-light) !important;
+  border-bottom: 2px solid transparent;
+  padding: 0.5rem 0.9rem !important;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.vp-code-group .tabs label.active {
+  color: var(--bh-text-strong) !important;
+  border-bottom-color: var(--bh-accent) !important;
+}
+
+.vp-code-group div[class*="language-"] {
+  border-top: none !important;
+  border-radius: 0 0 0.375rem 0.375rem !important;
+}
+
+/* ── Rounded corners (match rounded-md used throughout the dashboard) ── */
+.VPButton,
+.VPBadge,
+.vp-doc div[class*="language-"],
+.vp-doc .custom-block,
+.VPFeature,
+.VPFeature .icon,
+.VPNavBarSearch .search-input,
+.VPLocalSearchBox .search-input,
+.VPLocalSearchBox .result,
+.VPNavBarMenuLink,
+.VPMenuLink .link,
+.VPNavScreenMenuLink,
+.VPDocFooter .pager .pager-link,
+.VPSidebarItem .indicator,
+.vp-code-group .tabs label,
+.vp-doc summary {
+  border-radius: 0.375rem !important;
+}
+
+/* ── Scrollbars (thin, accent-tinted) ── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bh-surface-1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bh-surface-4);
+  border-radius: 0.375rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--bh-accent-dim);
+}
+
+/* ── Tables ── */
+.vp-doc table {
+  font-size: 0.85rem;
+  border: 1px solid var(--bh-border);
+  border-radius: 0.375rem;
+  overflow: hidden;
+  display: table;
+  width: 100%;
+}
+
+.vp-doc th {
+  background-color: var(--bh-surface-1) !important;
+  color: var(--bh-muted-light) !important;
+  font-family: var(--bh-font-family-tight);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-color: var(--bh-border) !important;
+}
+
+.vp-doc tr {
+  background-color: transparent !important;
+  border-top: 1px solid var(--bh-border) !important;
+}
+
+.vp-doc td {
+  border-color: var(--bh-border) !important;
+}
+
+/* ── Headings — Inter Tight, tight tracking like the dashboard h1s ── */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4,
+.vp-doc h5,
+.vp-doc h6 {
+  font-family: var(--bh-font-family-tight);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--bh-text-strong) !important;
+}
+
+.vp-doc h1 {
+  font-size: 1.875rem;
+  letter-spacing: -0.03em;
+}
+
+.vp-doc h2 {
+  font-size: 1.375rem;
+  border-top: 1px solid var(--bh-border);
+  padding-top: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.vp-doc h3 {
+  font-size: 1.1rem;
+}
+
+/* ── Links ── */
+.vp-doc a {
+  color: var(--bh-accent-bright);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(46, 175, 143, 0.35);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.vp-doc a:hover {
+  color: var(--bh-accent-bright);
+  border-bottom-color: var(--bh-accent-bright);
+}
+
+/* ── Blockquotes ── */
+.vp-doc blockquote {
+  border-left: 3px solid var(--bh-accent);
+  background-color: var(--bh-surface-1);
+  color: var(--bh-muted-light);
+  padding: 0.75rem 1rem;
+  border-radius: 0 0.375rem 0.375rem 0;
+  font-size: 0.875rem;
+}
+
+/* ── HR ── */
+.vp-doc hr {
+  border-color: var(--bh-border);
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: rgba(46, 175, 143, 0.3);
+  color: var(--bh-text-strong);
+}
